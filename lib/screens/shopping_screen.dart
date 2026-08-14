@@ -45,7 +45,6 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
       {'name': l10n.product2, 'image': 'assets/images/p2.jfif'},
       {'name': l10n.product3, 'image': 'assets/images/p3.jfif'},
       {'name': l10n.product4, 'image': 'assets/images/p4.jfif'},
-      {'name': l10n.product4, 'image': 'assets/images/p4.jfif'},
       {'name': l10n.product5, 'image': 'assets/images/p5.jfif'},
       {'name': l10n.product6, 'image': 'assets/images/p6.jfif'},
     ];
@@ -55,6 +54,7 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
       {'text': l10n.hotOffer2, 'image': 'assets/images/p2.jfif'},
       {'text': l10n.hotOffer3, 'image': 'assets/images/p3.jfif'},
       {'text': l10n.hotOffer4, 'image': 'assets/images/p4.jfif'},
+      {'text': l10n.hotOffer5, 'image': 'assets/images/p5.jfif'},
     ];
 
     return Scaffold(
