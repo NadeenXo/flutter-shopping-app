@@ -1,31 +1,27 @@
 # Flutter Shopping App
 
-A Flutter Shopping App created for the Flutter Fundamentals Module Task.
+Flutter Fundamentals module task built with Flutter and Dart.
 
-The project demonstrates Flutter project setup, widgets, responsive layouts, form validation, navigation, animations, and English/Arabic localization.
+**GitHub:** https://github.com/NadeenXo/flutter-shopping-app
 
 ## Features
 
-* Stateless and Stateful widgets
-* Local asset and network images
-* Custom Suwannaphum font
-* Responsive design using `MediaQuery`
-* Product `PageView`
-* Product `GridView` with two cards per row
-* Add-to-cart `SnackBar`
-* Hot Offers using `ListView.builder`
-* Form validation
-* Success dialog
-* Navigation between screens
-* Fade page transition
-* English and Arabic localization
-* RTL support for Arabic
+- Stateless and Stateful widgets
+- Local and network images
+- Suwannaphum custom font
+- Responsive UI with `MediaQuery`
+- Product `PageView`
+- Two-column product `GridView`
+- Add-to-cart `SnackBar`
+- Five Hot Offers using `ListView.builder` and `Expanded`
+- Sign Up form with inline validation
+- Success dialog and navigation
+- Smooth fade page transition
+- English and Arabic ARB localization with RTL support
 
-## Project Setup
+## Phase 1 - Project Setup
 
-The project was created using Flutter CLI.
-
-### Commands Used
+Commands used:
 
 ```bash
 flutter create first_flutter_project
@@ -34,10 +30,72 @@ flutter --version
 code .
 ```
 
-### Flutter Version
+Flutter: **3.44.8**  
+Dart: **3.12.2**
 
-* Flutter 3.44.8
-* Dart 3.12.2
+![Project Creation](../Project_Creation.png)
+
+![Flutter Version](../Flutter_Version.png)
+
+## Phase 2 - Images and Text
+
+The Phase 2 screen includes `My First Project`, one asset image, one network image, spacing, and the styled text `The two images are displayed` using the Suwannaphum font.
+
+![Phase 2](../Screenshot%202026-08-14%20125425.png)
+
+## Phase 3 - Shopping Screen
+
+The Shopping Screen uses `MediaQuery`, `PageView`, a two-column `GridView`, an add-to-cart `SnackBar`, and five Hot Offers using `ListView.builder`.
+
+![Shopping Screen](../Screenshot%202026-08-14%20125216.png)
+
+![Hot Offers](../Screenshot%202026-08-14%20125229.png)
+
+![Add to Cart SnackBar](../Screenshot%202026-08-14%20125638.png)
+
+## Phase 4 - Sign Up and Validation
+
+Validation rules:
+
+- Full Name: first letter must be capital
+- Email: must contain `@`
+- Password: minimum 6 characters
+- Confirm Password: must match password
+
+A valid form displays `Account created successfully` before navigating to the Shopping Screen.
+
+![Sign Up](../Screenshot%202026-08-14%20124836.png)
+
+![Validation](../Screenshot%202026-08-14%20124926.png)
+
+![Success Dialog](../Screenshot%202026-08-14%20125156.png)
+
+## Phase 5 - Fade Transition
+
+Navigation from Sign Up to Shopping uses `PageRouteBuilder`, `FadeTransition`, `Curves.easeInOut`, and a 600 ms duration.
+
+The Shopping Screen after successful navigation is shown below:
+
+![After Fade Transition](../Screenshot%202026-08-14%20125216.png)
+
+## Phase 6 - Localization
+
+Flutter localization uses:
+
+- `l10n.yaml`
+- `lib/l10n/app_en.arb`
+- `lib/l10n/app_ar.arb`
+- `AppLocalizations`
+
+All displayed text is taken from ARB localization entries. Arabic supports RTL layout.
+
+![Arabic Sign Up](../Screenshot%202026-08-14%20125519.png)
+
+![Arabic Shopping](../Screenshot%202026-08-14%20125256.png)
+
+![Arabic Hot Offers](../Screenshot%202026-08-14%20125246.png)
+
+![Arabic Add to Cart](../Screenshot%202026-08-14%20125631.png)
 
 ## Project Structure
 
@@ -59,51 +117,14 @@ lib/
 └── main.dart
 ```
 
-## Validation Rules
-
-The Sign Up form validates the following:
-
-* Full Name: first letter must be capitalized
-* Email: must contain `@`
-* Password: minimum 6 characters
-* Confirm Password: must match the password
-
-After successful validation, an account-created dialog is displayed. Closing the dialog navigates to the Shopping Screen using a fade transition.
-
-## Localization
-
-The application supports:
-
-* English
-* Arabic
-
-All displayed application text is stored in ARB localization files. Arabic also supports right-to-left layout.
-
-## Run the Project
-
-Install dependencies:
+## Run and Check
 
 ```bash
 flutter pub get
-```
-
-Generate localization files:
-
-```bash
 flutter gen-l10n
-```
-
-Run the application:
-
-```bash
+dart format .
+flutter analyze
 flutter run
 ```
 
-## Code Quality
-
-Before submission, the project was formatted and analyzed using:
-
-```bash
-dart format .
-flutter analyze
-```
+The project uses separate reusable widget files, descriptive names, short comments for important logic, and ARB localization instead of hard-coded displayed text.

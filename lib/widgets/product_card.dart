@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// A widget that displays a product card with an image, name, and an "Add to Cart" button.
 class ProductCard extends StatelessWidget {
   final String productName;
   final String imagePath;

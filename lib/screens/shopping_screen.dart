@@ -4,6 +4,7 @@ import '../l10n/app_localizations.dart';
 import '../widgets/hot_offer_item.dart';
 import '../widgets/product_card.dart';
 import '../widgets/product_page_view.dart';
+import 'personal_information_screen.dart';
 
 class ShoppingScreen extends StatefulWidget {
   final ValueChanged<Locale> onLocaleChange;
@@ -24,6 +25,15 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
     } else {
       widget.onLocaleChange(const Locale('en'));
     }
+  }
+
+  void _openUserForm() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const PersonalInformationScreen(),
+      ),
+    );
   }
 
   // Shows a message when a product is added to the cart.
@@ -73,6 +83,16 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton.icon(
+                onPressed: _openUserForm,
+                icon: const Icon(Icons.person),
+                label: const Text('Personal Information'),
+              ),
+            ),
+
+            const SizedBox(height: 20),
             Text(
               l10n.ourProducts,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

@@ -1,10 +1,16 @@
+import 'package:first_flutter_project/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:firebase_core/firebase_core.dart';
 
+import 'firebase_options.dart';
 import 'l10n/app_localizations.dart';
-import 'screens/sign_up_screen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+
   runApp(const MyApp());
 }
 
@@ -37,7 +43,7 @@ class _MyAppState extends State<MyApp> {
       onGenerateTitle: (context) {
         return AppLocalizations.of(context)!.appTitle;
       },
-      home: SignUpScreen(onLocaleChange: _changeLocale),
+      home: LoginScreen(onLocaleChange: _changeLocale),
     );
   }
 }

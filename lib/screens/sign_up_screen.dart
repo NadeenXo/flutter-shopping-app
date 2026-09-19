@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import '../l10n/app_localizations.dart';
 import 'shopping_screen.dart';
@@ -30,18 +31,59 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
   }
 
+  // Toggles the language of the app.
   void _toggleLanguage() {
     final String currentLanguage = Localizations.localeOf(context).languageCode;
 
     widget.onLocaleChange(Locale(currentLanguage == 'en' ? 'ar' : 'en'));
   }
 
-  void _submitForm() {
-    if (_formKey.currentState!.validate()) {
+  // Validates all sign-up fields before creating the account.
+  Future<void> _submitForm() async {
+    if (!_formKey.currentState!.validate()) {
+      return;
+    }
+
+    try {
+      final UserCredential userCredential = await FirebaseAuth.instance
+          .createUserWithEmailAndPassword(
+            email: _emailController.text.trim(),
+            password: _passwordController.text,
+          );
+
+      await userCredential.user?.updateDisplayName(
+        _fullNameController.text.trim(),
+      );
+
+      if (!mounted) {
+        return;
+      }
+
       _showSuccessDialog();
+    } on FirebaseAuthException catch (error) {
+      if (!mounted) {
+        return;
+      }
+
+      String message;
+
+      if (error.code == 'email-already-in-use') {
+        message = 'An account already exists for this email.';
+      } else if (error.code == 'weak-password') {
+        message = 'The password is too weak.';
+      } else if (error.code == 'invalid-email') {
+        message = 'Please enter a valid email address.';
+      } else {
+        message = error.message ?? 'Something went wrong.';
+      }
+
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(message)));
     }
   }
 
+  // Shows a success dialog after a successful sign-up.
   void _showSuccessDialog() {
     final AppLocalizations l10n = AppLocalizations.of(context)!;
 
@@ -66,6 +108,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
+  // Navigates to the shopping screen.
   void _navigateToShoppingScreen() {
     Navigator.pushReplacement(
       context,

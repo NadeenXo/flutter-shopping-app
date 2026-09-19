@@ -1,0 +1,2 @@
+Flutter Shopping App - GitHub Repository:
+https://github.com/NadeenXo/flutter-shopping-app
