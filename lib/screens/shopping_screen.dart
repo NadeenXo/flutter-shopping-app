@@ -1,10 +1,10 @@
+import 'my_information_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../l10n/app_localizations.dart';
 import '../widgets/hot_offer_item.dart';
 import '../widgets/product_card.dart';
 import '../widgets/product_page_view.dart';
-import 'personal_information_screen.dart';
 
 class ShoppingScreen extends StatefulWidget {
   final ValueChanged<Locale> onLocaleChange;
@@ -27,12 +27,10 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
     }
   }
 
-  void _openUserForm() {
+  void _openMyInformation() {
     Navigator.push(
       context,
-      MaterialPageRoute(
-        builder: (context) => const PersonalInformationScreen(),
-      ),
+      MaterialPageRoute(builder: (context) => const MyInformationScreen()),
     );
   }
 
@@ -86,24 +84,19 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
             SizedBox(
               width: double.infinity,
               child: ElevatedButton.icon(
-                onPressed: _openUserForm,
+                onPressed: _openMyInformation,
                 icon: const Icon(Icons.person),
-                label: const Text('Personal Information'),
+                label: Text(l10n.myInformation),
               ),
             ),
-
             const SizedBox(height: 20),
             Text(
               l10n.ourProducts,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(height: 15),
-
             const ProductPageView(),
-
             const SizedBox(height: 25),
-
             GridView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
@@ -122,16 +115,12 @@ class _ShoppingScreenState extends State<ShoppingScreen> {
                 );
               },
             ),
-
             const SizedBox(height: 25),
-
             Text(
               l10n.hotOffers,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-
             const SizedBox(height: 10),
-
             ListView.builder(
               shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),

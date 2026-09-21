@@ -28,11 +28,14 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Future<void> _login() async {
+    final AppLocalizations l10n = AppLocalizations.of(context)!;
+
     if (!_formKey.currentState!.validate()) {
       return;
     }
 
     try {
+      // Sign in the existing user with Firebase Authentication.
       await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: _emailController.text.trim(),
         password: _passwordController.text,
@@ -57,11 +60,11 @@ class _LoginScreenState extends State<LoginScreen> {
       String message;
 
       if (error.code == 'invalid-credential') {
-        message = 'Incorrect email or password.';
+        message = l10n.incorrectEmailOrPassword;
       } else if (error.code == 'invalid-email') {
-        message = 'Please enter a valid email address.';
+        message = l10n.invalidEmail;
       } else {
-        message = error.message ?? 'Login failed.';
+        message = l10n.loginFailed;
       }
 
       ScaffoldMessenger.of(
@@ -92,7 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Login'),
+        title: Text(l10n.login),
         centerTitle: true,
         actions: [
           IconButton(
@@ -152,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   onPressed: _login,
-                  child: const Text('Login'),
+                  child: Text(l10n.login),
                 ),
               ),
               const SizedBox(height: 12),
@@ -160,7 +163,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: double.infinity,
                 child: OutlinedButton(
                   onPressed: _goToSignUp,
-                  child: const Text('Create Account'),
+                  child: Text(l10n.createAccount),
                 ),
               ),
             ],

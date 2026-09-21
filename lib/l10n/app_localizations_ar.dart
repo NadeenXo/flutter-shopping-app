@@ -75,7 +75,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get ourProducts => 'منتجاتنا';
 
   @override
-  String get hotOffers => ' العروض الخاصة';
+  String get hotOffers => 'العروض الخاصة';
 
   @override
   String get product1 => 'المنتج 1';
@@ -112,4 +112,95 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get itemAddedToCart => 'تمت إضافة المنتج إلى سلة التسوق';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
+  String get incorrectEmailOrPassword =>
+      'البريد الإلكتروني أو كلمة المرور غير صحيحة';
+
+  @override
+  String get invalidEmail => 'يرجى إدخال بريد إلكتروني صالح';
+
+  @override
+  String get accountAlreadyExists => 'يوجد حساب بالفعل بهذا البريد الإلكتروني';
+
+  @override
+  String get weakPassword => 'كلمة المرور ضعيفة جدًا';
+
+  @override
+  String get myInformation => 'معلوماتي';
+
+  @override
+  String get userInformation => 'معلومات المستخدم';
+
+  @override
+  String get addInformation => 'إضافة المعلومات';
+
+  @override
+  String get editInformation => 'تعديل المعلومات';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get nameRequired => 'يرجى إدخال الاسم';
+
+  @override
+  String get age => 'العمر';
+
+  @override
+  String get ageRequired => 'يرجى إدخال العمر';
+
+  @override
+  String get validAgeRequired => 'يرجى إدخال عمر صالح';
+
+  @override
+  String get favouriteHobby => 'الهواية المفضلة';
+
+  @override
+  String get hobbyRequired => 'يرجى إدخال الهواية المفضلة';
+
+  @override
+  String get saveInformation => 'حفظ المعلومات';
+
+  @override
+  String get saveChanges => 'حفظ التغييرات';
+
+  @override
+  String get viewSavedRecords => 'عرض السجلات المحفوظة';
+
+  @override
+  String get savedInformation => 'المعلومات المحفوظة';
+
+  @override
+  String get noSavedInformation => 'لا توجد معلومات محفوظة حتى الآن';
+
+  @override
+  String get noInformationSavedYet => 'لم يتم حفظ أي معلومات بعد';
+
+  @override
+  String get noUserLoggedIn => 'لا يوجد مستخدم مسجل الدخول';
+
+  @override
+  String get somethingWentWrong => 'حدث خطأ ما';
+
+  @override
+  String get dataSavedSuccessfully => 'تم حفظ البيانات بنجاح';
+
+  @override
+  String get failedToSaveData => 'فشل حفظ البيانات';
+
+  @override
+  String get cancel => 'إلغاء';
+
+  @override
+  String get update => 'تحديث';
+
+  @override
+  String get edit => 'تعديل';
 }

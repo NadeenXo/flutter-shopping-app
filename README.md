@@ -1,101 +1,79 @@
 # Flutter Shopping App
 
-Flutter Fundamentals module task built with Flutter and Dart.
+A Flutter shopping application extended with **Firebase Authentication** and **Cloud Firestore**.
 
 **GitHub:** https://github.com/NadeenXo/flutter-shopping-app
 
 ## Features
 
-- Stateless and Stateful widgets
-- Local and network images
-- Suwannaphum custom font
-- Responsive UI with `MediaQuery`
-- Product `PageView`
-- Two-column product `GridView`
+- Responsive Flutter shopping UI
+- Product `PageView` and `GridView`
 - Add-to-cart `SnackBar`
-- Five Hot Offers using `ListView.builder` and `Expanded`
-- Sign Up form with inline validation
-- Success dialog and navigation
-- Smooth fade page transition
-- English and Arabic ARB localization with RTL support
+- Email and Password Sign Up
+- Email and Password Login
+- Firebase Authentication
+- Cloud Firestore
+- Save Name, Age, and Favourite Hobby
+- Edit saved user information
+- View saved Firestore records
+- English and Arabic localization
+- RTL support for Arabic
+- Form validation
+- Separate screens, widgets, and models
 
-## Phase 1 - Project Setup
+## Firebase Setup
 
-Commands used:
+The project uses:
 
-```bash
-flutter create first_flutter_project
-cd first_flutter_project
-flutter --version
-code .
+firebase_core
+firebase_auth
+cloud_firestore
+
+Firebase was configured using Firebase CLI and FlutterFire CLI:
+
+Firebase is initialized in `main.dart`.
+
+## Firebase Authentication
+
+Firebase Authentication is used to create accounts and log in using Email and Password.
+
+After a successful login, the user is redirected to the Shopping screen.
+
+## Cloud Firestore
+
+The Personal Information form contains: Name, Age, Favourite Hobby
+
+Each authenticated user stores their information in the `users` collection using their Firebase UID as the document ID.
+
+The application also contains a separate screen that reads and displays saved Firestore records in real time using `StreamBuilder`.
+
+## App Flow
+
+```text
+Login
+  ↓
+Shopping Screen
+  ↓
+My Information
+  ↓
+Add / Edit Information
+  ↓
+Save to Cloud Firestore
+  ↓
+View Saved Records
 ```
 
-Flutter: **3.44.8**  
-Dart: **3.12.2**
+New users can also create an account:
 
-![Project Creation](../Project_Creation.png)
-
-![Flutter Version](../Flutter_Version.png)
-
-## Phase 2 - Images and Text
-
-The Phase 2 screen includes `My First Project`, one asset image, one network image, spacing, and the styled text `The two images are displayed` using the Suwannaphum font.
-
-![Phase 2](../Screenshot%202026-08-14%20125425.png)
-
-## Phase 3 - Shopping Screen
-
-The Shopping Screen uses `MediaQuery`, `PageView`, a two-column `GridView`, an add-to-cart `SnackBar`, and five Hot Offers using `ListView.builder`.
-
-![Shopping Screen](../Screenshot%202026-08-14%20125216.png)
-
-![Hot Offers](../Screenshot%202026-08-14%20125229.png)
-
-![Add to Cart SnackBar](../Screenshot%202026-08-14%20125638.png)
-
-## Phase 4 - Sign Up and Validation
-
-Validation rules:
-
-- Full Name: first letter must be capital
-- Email: must contain `@`
-- Password: minimum 6 characters
-- Confirm Password: must match password
-
-A valid form displays `Account created successfully` before navigating to the Shopping Screen.
-
-![Sign Up](../Screenshot%202026-08-14%20124836.png)
-
-![Validation](../Screenshot%202026-08-14%20124926.png)
-
-![Success Dialog](../Screenshot%202026-08-14%20125156.png)
-
-## Phase 5 - Fade Transition
-
-Navigation from Sign Up to Shopping uses `PageRouteBuilder`, `FadeTransition`, `Curves.easeInOut`, and a 600 ms duration.
-
-The Shopping Screen after successful navigation is shown below:
-
-![After Fade Transition](../Screenshot%202026-08-14%20125216.png)
-
-## Phase 6 - Localization
-
-Flutter localization uses:
-
-- `l10n.yaml`
-- `lib/l10n/app_en.arb`
-- `lib/l10n/app_ar.arb`
-- `AppLocalizations`
-
-All displayed text is taken from ARB localization entries. Arabic supports RTL layout.
-
-![Arabic Sign Up](../Screenshot%202026-08-14%20125519.png)
-
-![Arabic Shopping](../Screenshot%202026-08-14%20125256.png)
-
-![Arabic Hot Offers](../Screenshot%202026-08-14%20125246.png)
-
-![Arabic Add to Cart](../Screenshot%202026-08-14%20125631.png)
+```text
+Login
+  ↓
+Create Account
+  ↓
+Firebase Sign Up
+  ↓
+Shopping Screen
+```
 
 ## Project Structure
 
@@ -104,27 +82,94 @@ lib/
 ├── l10n/
 │   ├── app_en.arb
 │   └── app_ar.arb
+├── models/
+│   └── user_data.dart
 ├── screens/
-│   ├── first_project_screen.dart
+│   ├── login_screen.dart
 │   ├── sign_up_screen.dart
-│   └── shopping_screen.dart
+│   ├── shopping_screen.dart
+│   ├── my_information_screen.dart
+│   ├── personal_information_screen.dart
+│   └── saved_information_screen.dart
 ├── widgets/
-│   ├── images_row.dart
-│   ├── project_message.dart
-│   ├── product_card.dart
-│   ├── product_page_view.dart
-│   └── hot_offer_item.dart
+├── firebase_options.dart
 └── main.dart
 ```
 
-## Run and Check
+## Screenshots
+
+### Firebase Login
+
+The Login screen uses Firebase Authentication with Email and Password.
+
+![Firebase Login](screenshots/Screenshot%202026-09-21%20190646.png)
+
+### Home Screen After Login
+
+After a successful login, the user is redirected to the Shopping screen.
+
+![Home Screen](screenshots/Screenshot%202026-09-21%20190748.png)
+
+### Personal Information Form
+
+The user can enter their Name, Age, and Favourite Hobby.  
+The form includes input validation.
+
+![Personal Information Form](screenshots/Screenshot%202026-09-21%20190908.png)
+
+### Saved Firestore Records
+
+Saved information is read from Cloud Firestore and displayed on a separate screen.
+
+![Saved Firestore Records](screenshots/Screenshot%202026-09-21%20190919.png)
+
+### My Information
+
+The logged-in user's information is loaded from Firestore and can be edited.
+
+![My Information](screenshots/Screenshot%202026-09-21%20191040.png)
+
+## Localization
+
+The application supports both English and Arabic using Flutter localization.
+
+Localization files:
+
+```text
+lib/l10n/app_en.arb
+lib/l10n/app_ar.arb
+```
+
+Arabic supports RTL layout.
+
+## Run the Project
+
+Install dependencies:
 
 ```bash
 flutter pub get
+```
+
+Generate localization files:
+
+```bash
 flutter gen-l10n
+```
+
+Format the project:
+
+```bash
 dart format .
-flutter analyze
+```
+
+Run the project:
+
+```bash
 flutter run
 ```
 
-The project uses separate reusable widget files, descriptive names, short comments for important logic, and ARB localization instead of hard-coded displayed text.
+Or run on Microsoft Edge:
+
+```bash
+flutter run -d edge
+```

@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
+import '../l10n/app_localizations.dart';
 import '../models/user_data.dart';
 
 class SavedInformationScreen extends StatelessWidget {
@@ -8,29 +9,34 @@ class SavedInformationScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final AppLocalizations l10n = AppLocalizations.of(context)!;
+
     return Scaffold(
-      appBar: AppBar(title: const Text('Saved Information'), centerTitle: true),
+      appBar: AppBar(title: Text(l10n.savedInformation), centerTitle: true),
       body: StreamBuilder<QuerySnapshot>(
+        // Listen to all documents in the users collection in real time.
         stream: FirebaseFirestore.instance.collection('users').snapshots(),
         builder: (context, snapshot) {
           if (snapshot.hasError) {
-            return const Center(child: Text('Something went wrong'));
+            return Center(child: Text(l10n.somethingWentWrong));
           }
 
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(child: CircularProgressIndicator());
           }
 
-          final List<UserData> users = snapshot.data!.docs.map((document) {
+          final documents = snapshot.data!.docs;
+
+          if (documents.isEmpty) {
+            return Center(child: Text(l10n.noSavedInformation));
+          }
+
+          final List<UserData> users = documents.map((document) {
             final Map<String, dynamic> data =
                 document.data() as Map<String, dynamic>;
 
             return UserData.fromMap(data);
           }).toList();
-
-          if (users.isEmpty) {
-            return const Center(child: Text('No saved information yet'));
-          }
 
           return ListView.builder(
             padding: const EdgeInsets.all(16),
@@ -44,8 +50,8 @@ class SavedInformationScreen extends StatelessWidget {
                   leading: const Icon(Icons.person),
                   title: Text(user.name),
                   subtitle: Text(
-                    'Age: ${user.age}\n'
-                    'Favourite Hobby: ${user.favouriteHobby}',
+                    '${l10n.age}: ${user.age}\n'
+                    '${l10n.favouriteHobby}: ${user.favouriteHobby}',
                   ),
                 ),
               );

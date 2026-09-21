@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
 import '../l10n/app_localizations.dart';
 import 'shopping_screen.dart';
@@ -31,26 +31,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
     super.dispose();
   }
 
-  // Toggles the language of the app.
+  // Changes between English and Arabic.
   void _toggleLanguage() {
     final String currentLanguage = Localizations.localeOf(context).languageCode;
 
     widget.onLocaleChange(Locale(currentLanguage == 'en' ? 'ar' : 'en'));
   }
 
-  // Validates all sign-up fields before creating the account.
+  // Validates the form and creates a Firebase Authentication account.
   Future<void> _submitForm() async {
+    final AppLocalizations l10n = AppLocalizations.of(context)!;
+
     if (!_formKey.currentState!.validate()) {
       return;
     }
 
     try {
+      // Create a new user using Firebase Authentication.
       final UserCredential userCredential = await FirebaseAuth.instance
           .createUserWithEmailAndPassword(
             email: _emailController.text.trim(),
             password: _passwordController.text,
           );
 
+      // Save the entered full name as the Firebase display name.
       await userCredential.user?.updateDisplayName(
         _fullNameController.text.trim(),
       );
@@ -68,13 +72,13 @@ class _SignUpScreenState extends State<SignUpScreen> {
       String message;
 
       if (error.code == 'email-already-in-use') {
-        message = 'An account already exists for this email.';
+        message = l10n.accountAlreadyExists;
       } else if (error.code == 'weak-password') {
-        message = 'The password is too weak.';
+        message = l10n.weakPassword;
       } else if (error.code == 'invalid-email') {
-        message = 'Please enter a valid email address.';
+        message = l10n.invalidEmail;
       } else {
-        message = error.message ?? 'Something went wrong.';
+        message = l10n.somethingWentWrong;
       }
 
       ScaffoldMessenger.of(
@@ -83,11 +87,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
     }
   }
 
-  // Shows a success dialog after a successful sign-up.
+  // Shows a success message after account creation.
   void _showSuccessDialog() {
     final AppLocalizations l10n = AppLocalizations.of(context)!;
 
-    showDialog(
+    showDialog<void>(
       context: context,
       barrierDismissible: false,
       builder: (dialogContext) {
@@ -108,7 +112,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 
-  // Navigates to the shopping screen.
+  // Opens the shopping screen after successful sign-up.
   void _navigateToShoppingScreen() {
     Navigator.pushReplacement(
       context,
@@ -132,6 +136,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   @override
   Widget build(BuildContext context) {
     final AppLocalizations l10n = AppLocalizations.of(context)!;
+    final bool isEnglish = Localizations.localeOf(context).languageCode == 'en';
 
     return Scaffold(
       appBar: AppBar(
@@ -163,7 +168,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
                   final String name = value.trim();
 
-                  if (name[0] != name[0].toUpperCase()) {
+                  // Capital-letter validation is only relevant in English.
+                  if (isEnglish && name[0] != name[0].toUpperCase()) {
                     return l10n.firstLetterCapital;
                   }
 

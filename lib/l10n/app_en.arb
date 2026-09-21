@@ -1,5 +1,6 @@
 {
   "@@locale": "en",
+
   "appTitle": "Flutter Shopping App",
   "firstProjectTitle": "My First Project",
   "twoImagesDisplayed": "The two images are displayed",
@@ -8,17 +9,20 @@
   "fullName": "Full Name",
   "fullNameRequired": "Full name is required",
   "firstLetterCapital": "First letter must be capital",
+
   "email": "Email",
   "emailRequired": "Email is required",
   "emailMustContainAt": "Email must contain @",
+
   "password": "Password",
   "passwordRequired": "Password is required",
   "passwordMinLength": "Password must be at least 6 characters",
+
   "confirmPassword": "Confirm Password",
   "confirmPasswordRequired": "Please confirm your password",
   "passwordsDoNotMatch": "Passwords do not match",
-  "createAccount": "Create Account",
 
+  "createAccount": "Create Account",
   "success": "Success",
   "accountCreatedSuccessfully": "Account created successfully",
   "ok": "OK",
@@ -26,16 +30,59 @@
   "shopping": "Shopping",
   "ourProducts": "Our Products",
   "hotOffers": "Hot Offers",
+
   "product1": "Product 1",
   "product2": "Product 2",
   "product3": "Product 3",
   "product4": "Product 4",
   "product5": "Product 5",
   "product6": "Product 6",
+
   "hotOffer1": "Special Offer 1",
   "hotOffer2": "Special Offer 2",
   "hotOffer3": "Special Offer 3",
   "hotOffer4": "Special Offer 4",
   "hotOffer5": "Special Offer 5",
-  "itemAddedToCart": "Item added to the cart"
+
+  "itemAddedToCart": "Item added to the cart",
+
+  "login": "Login",
+  "loginFailed": "Login failed",
+  "incorrectEmailOrPassword": "Incorrect email or password",
+  "invalidEmail": "Please enter a valid email address",
+  "accountAlreadyExists": "An account already exists for this email",
+  "weakPassword": "The password is too weak",
+
+  "myInformation": "My Information",
+  "userInformation": "User Information",
+  "addInformation": "Add Information",
+  "editInformation": "Edit Information",
+
+  "name": "Name",
+  "nameRequired": "Please enter your name",
+
+  "age": "Age",
+  "ageRequired": "Please enter your age",
+  "validAgeRequired": "Please enter a valid age",
+
+  "favouriteHobby": "Favourite Hobby",
+  "hobbyRequired": "Please enter your favourite hobby",
+
+  "saveInformation": "Save Information",
+  "saveChanges": "Save Changes",
+  "viewSavedRecords": "View Saved Records",
+
+  "savedInformation": "Saved Information",
+  "noSavedInformation": "No saved information yet",
+  "noInformationSavedYet": "No information saved yet",
+
+  "noUserLoggedIn": "No user is logged in",
+  "somethingWentWrong": "Something went wrong",
+
+  "dataSavedSuccessfully": "Data saved successfully",
+  "failedToSaveData": "Failed to save data",
+
+  "cancel": "Cancel",
+  "update": "Update",
+  "edit": "Edit"
 }

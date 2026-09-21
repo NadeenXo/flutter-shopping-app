@@ -112,4 +112,94 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get itemAddedToCart => 'Item added to the cart';
+
+  @override
+  String get login => 'Login';
+
+  @override
+  String get loginFailed => 'Login failed';
+
+  @override
+  String get incorrectEmailOrPassword => 'Incorrect email or password';
+
+  @override
+  String get invalidEmail => 'Please enter a valid email address';
+
+  @override
+  String get accountAlreadyExists => 'An account already exists for this email';
+
+  @override
+  String get weakPassword => 'The password is too weak';
+
+  @override
+  String get myInformation => 'My Information';
+
+  @override
+  String get userInformation => 'User Information';
+
+  @override
+  String get addInformation => 'Add Information';
+
+  @override
+  String get editInformation => 'Edit Information';
+
+  @override
+  String get name => 'Name';
+
+  @override
+  String get nameRequired => 'Please enter your name';
+
+  @override
+  String get age => 'Age';
+
+  @override
+  String get ageRequired => 'Please enter your age';
+
+  @override
+  String get validAgeRequired => 'Please enter a valid age';
+
+  @override
+  String get favouriteHobby => 'Favourite Hobby';
+
+  @override
+  String get hobbyRequired => 'Please enter your favourite hobby';
+
+  @override
+  String get saveInformation => 'Save Information';
+
+  @override
+  String get saveChanges => 'Save Changes';
+
+  @override
+  String get viewSavedRecords => 'View Saved Records';
+
+  @override
+  String get savedInformation => 'Saved Information';
+
+  @override
+  String get noSavedInformation => 'No saved information yet';
+
+  @override
+  String get noInformationSavedYet => 'No information saved yet';
+
+  @override
+  String get noUserLoggedIn => 'No user is logged in';
+
+  @override
+  String get somethingWentWrong => 'Something went wrong';
+
+  @override
+  String get dataSavedSuccessfully => 'Data saved successfully';
+
+  @override
+  String get failedToSaveData => 'Failed to save data';
+
+  @override
+  String get cancel => 'Cancel';
+
+  @override
+  String get update => 'Update';
+
+  @override
+  String get edit => 'Edit';
 }

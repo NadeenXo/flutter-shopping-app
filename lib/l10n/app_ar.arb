@@ -1,5 +1,6 @@
 {
   "@@locale": "ar",
+
   "appTitle": "تطبيق التسوق",
   "firstProjectTitle": "مشروعي الأول",
   "twoImagesDisplayed": "تم عرض الصورتين",
@@ -8,34 +9,80 @@
   "fullName": "الاسم الكامل",
   "fullNameRequired": "الاسم الكامل مطلوب",
   "firstLetterCapital": "يجب أن يكون الحرف الأول كبيرًا",
+
   "email": "البريد الإلكتروني",
   "emailRequired": "البريد الإلكتروني مطلوب",
   "emailMustContainAt": "يجب أن يحتوي البريد الإلكتروني على @",
+
   "password": "كلمة المرور",
   "passwordRequired": "كلمة المرور مطلوبة",
   "passwordMinLength": "يجب ألا تقل كلمة المرور عن 6 أحرف",
+
   "confirmPassword": "تأكيد كلمة المرور",
   "confirmPasswordRequired": "يرجى تأكيد كلمة المرور",
   "passwordsDoNotMatch": "كلمتا المرور غير متطابقتين",
-  "createAccount": "إنشاء الحساب",
 
+  "createAccount": "إنشاء الحساب",
   "success": "تم بنجاح",
   "accountCreatedSuccessfully": "تم إنشاء الحساب بنجاح",
   "ok": "حسنًا",
 
   "shopping": "التسوق",
   "ourProducts": "منتجاتنا",
-  "hotOffers": " العروض الخاصة",
+  "hotOffers": "العروض الخاصة",
+
   "product1": "المنتج 1",
   "product2": "المنتج 2",
   "product3": "المنتج 3",
   "product4": "المنتج 4",
   "product5": "المنتج 5",
   "product6": "المنتج 6",
+
   "hotOffer1": "عرض خاص 1",
   "hotOffer2": "عرض خاص 2",
   "hotOffer3": "عرض خاص 3",
   "hotOffer4": "عرض خاص 4",
   "hotOffer5": "عرض خاص 5",
-  "itemAddedToCart": "تمت إضافة المنتج إلى سلة التسوق"
+
+  "itemAddedToCart": "تمت إضافة المنتج إلى سلة التسوق",
+
+  "login": "تسجيل الدخول",
+  "loginFailed": "فشل تسجيل الدخول",
+  "incorrectEmailOrPassword": "البريد الإلكتروني أو كلمة المرور غير صحيحة",
+  "invalidEmail": "يرجى إدخال بريد إلكتروني صالح",
+  "accountAlreadyExists": "يوجد حساب بالفعل بهذا البريد الإلكتروني",
+  "weakPassword": "كلمة المرور ضعيفة جدًا",
+
+  "myInformation": "معلوماتي",
+  "userInformation": "معلومات المستخدم",
+  "addInformation": "إضافة المعلومات",
+  "editInformation": "تعديل المعلومات",
+
+  "name": "الاسم",
+  "nameRequired": "يرجى إدخال الاسم",
+
+  "age": "العمر",
+  "ageRequired": "يرجى إدخال العمر",
+  "validAgeRequired": "يرجى إدخال عمر صالح",
+
+  "favouriteHobby": "الهواية المفضلة",
+  "hobbyRequired": "يرجى إدخال الهواية المفضلة",
+
+  "saveInformation": "حفظ المعلومات",
+  "saveChanges": "حفظ التغييرات",
+  "viewSavedRecords": "عرض السجلات المحفوظة",
+
+  "savedInformation": "المعلومات المحفوظة",
+  "noSavedInformation": "لا توجد معلومات محفوظة حتى الآن",
+  "noInformationSavedYet": "لم يتم حفظ أي معلومات بعد",
+
+  "noUserLoggedIn": "لا يوجد مستخدم مسجل الدخول",
+  "somethingWentWrong": "حدث خطأ ما",
+
+  "dataSavedSuccessfully": "تم حفظ البيانات بنجاح",
+  "failedToSaveData": "فشل حفظ البيانات",
+
+  "cancel": "إلغاء",
+  "update": "تحديث",
+  "edit": "تعديل"
 }

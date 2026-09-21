@@ -307,6 +307,186 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Item added to the cart'**
   String get itemAddedToCart;
+
+  /// No description provided for @login.
+  ///
+  /// In en, this message translates to:
+  /// **'Login'**
+  String get login;
+
+  /// No description provided for @loginFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Login failed'**
+  String get loginFailed;
+
+  /// No description provided for @incorrectEmailOrPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'Incorrect email or password'**
+  String get incorrectEmailOrPassword;
+
+  /// No description provided for @invalidEmail.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid email address'**
+  String get invalidEmail;
+
+  /// No description provided for @accountAlreadyExists.
+  ///
+  /// In en, this message translates to:
+  /// **'An account already exists for this email'**
+  String get accountAlreadyExists;
+
+  /// No description provided for @weakPassword.
+  ///
+  /// In en, this message translates to:
+  /// **'The password is too weak'**
+  String get weakPassword;
+
+  /// No description provided for @myInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'My Information'**
+  String get myInformation;
+
+  /// No description provided for @userInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'User Information'**
+  String get userInformation;
+
+  /// No description provided for @addInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Add Information'**
+  String get addInformation;
+
+  /// No description provided for @editInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit Information'**
+  String get editInformation;
+
+  /// No description provided for @name.
+  ///
+  /// In en, this message translates to:
+  /// **'Name'**
+  String get name;
+
+  /// No description provided for @nameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your name'**
+  String get nameRequired;
+
+  /// No description provided for @age.
+  ///
+  /// In en, this message translates to:
+  /// **'Age'**
+  String get age;
+
+  /// No description provided for @ageRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your age'**
+  String get ageRequired;
+
+  /// No description provided for @validAgeRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter a valid age'**
+  String get validAgeRequired;
+
+  /// No description provided for @favouriteHobby.
+  ///
+  /// In en, this message translates to:
+  /// **'Favourite Hobby'**
+  String get favouriteHobby;
+
+  /// No description provided for @hobbyRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Please enter your favourite hobby'**
+  String get hobbyRequired;
+
+  /// No description provided for @saveInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Information'**
+  String get saveInformation;
+
+  /// No description provided for @saveChanges.
+  ///
+  /// In en, this message translates to:
+  /// **'Save Changes'**
+  String get saveChanges;
+
+  /// No description provided for @viewSavedRecords.
+  ///
+  /// In en, this message translates to:
+  /// **'View Saved Records'**
+  String get viewSavedRecords;
+
+  /// No description provided for @savedInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'Saved Information'**
+  String get savedInformation;
+
+  /// No description provided for @noSavedInformation.
+  ///
+  /// In en, this message translates to:
+  /// **'No saved information yet'**
+  String get noSavedInformation;
+
+  /// No description provided for @noInformationSavedYet.
+  ///
+  /// In en, this message translates to:
+  /// **'No information saved yet'**
+  String get noInformationSavedYet;
+
+  /// No description provided for @noUserLoggedIn.
+  ///
+  /// In en, this message translates to:
+  /// **'No user is logged in'**
+  String get noUserLoggedIn;
+
+  /// No description provided for @somethingWentWrong.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong'**
+  String get somethingWentWrong;
+
+  /// No description provided for @dataSavedSuccessfully.
+  ///
+  /// In en, this message translates to:
+  /// **'Data saved successfully'**
+  String get dataSavedSuccessfully;
+
+  /// No description provided for @failedToSaveData.
+  ///
+  /// In en, this message translates to:
+  /// **'Failed to save data'**
+  String get failedToSaveData;
+
+  /// No description provided for @cancel.
+  ///
+  /// In en, this message translates to:
+  /// **'Cancel'**
+  String get cancel;
+
+  /// No description provided for @update.
+  ///
+  /// In en, this message translates to:
+  /// **'Update'**
+  String get update;
+
+  /// No description provided for @edit.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get edit;
 }
 
 class _AppLocalizationsDelegate
